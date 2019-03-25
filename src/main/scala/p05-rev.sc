@@ -24,4 +24,7 @@ object p05_rev{
   }
 
   revTailRecursive(list)
+
+  def revUsingFold(ls:List[Int]):List[Int] = ls.foldLeft(List[Int]()){(r,h) => h::r}
+  revUsingFold(list)
 }
