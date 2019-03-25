@@ -13,6 +13,7 @@ target/
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 #scala
+project/
 
 # Package Files #
 *.jar
