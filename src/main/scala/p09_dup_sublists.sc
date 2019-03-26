@@ -5,9 +5,17 @@ object p09_dup_sublists{
   def pack[A](ls: List[A]):List[List[A]] = {
     if(ls.isEmpty) List(List())
     else {
-      val (packed,next) = ls span { _ == ls.head}
+      val (packed,next) = ls span {
+        x => {
+          val head = ls.head
+          x ==  head
+          //or you can refactor this to (_ == ls.head)
+        }
+      }
       if(next == Nil) List(packed)
-      else packed :: pack(next)
+      else {
+        packed :: pack(next)
+      }
     }
   }
   pack(list)
