@@ -1,7 +1,6 @@
 object p16 {
 
   val list = List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k)
-  List('a, 'c, 'e, 'g, 'i, 'k)
   //simple Recursive
   def dropRecursive[A](n: Int, ls: List[A]): List[A] = {
     def dropR(c: Int, currList: List[A]): List[A] = (c, currList) match {
@@ -45,6 +44,7 @@ object p16 {
   //lets go functional
   def dropFunctional[A](n:Int, ls: List[A]):List[A] =
     ls.zipWithIndex filter( tuple => (tuple._2 +1) % n != 0) map(element => element._1)
+
   //or you can write in syntactic sugar as
   //ls.zipWithIndex filter( tuple => (tuple._2 +1) % n != 0)
     //.map(_._1)
