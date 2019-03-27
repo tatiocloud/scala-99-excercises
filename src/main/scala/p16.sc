@@ -41,4 +41,13 @@ object p16 {
   }
 
   dropTailRecursive(2, list)
+
+  //lets go functional
+  def dropFunctional[A](n:Int, ls: List[A]):List[A] =
+    ls.zipWithIndex filter( tuple => (tuple._2 +1) % n != 0) map(element => element._1)
+  //or you can write in syntactic sugar as
+  //ls.zipWithIndex filter( tuple => (tuple._2 +1) % n != 0)
+    //.map(_._1)
+
+  dropFunctional(2,list)
 }
